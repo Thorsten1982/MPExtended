@@ -45,9 +45,12 @@ namespace MPExtended.Services.StreamingService.Transcoders
                 context.Pipeline.AddDataUnit(context.Source.GetInputReaderUnit(), 1);
             }
 
-            // calculate stream mappings (no way I'm going to add subtitle support; it's just broken)
+            // calculate stream mappings
+            // - subtitles aren't supported, it's broken in ffmpeg
+            // - don't do it when we're on an MPEG TS stream, apparantly sometimes an subtitle stream pops up before the video stream
+            // calculate stream mappings (no way I'm going to add subtitle support; it's plain broken)
             string mappings = "";
-            if (context.AudioTrackId != null)
+            if (context.AudioTrackId != null && context.MediaInfo.Container != "MPEG-TS")
             {
                 // do audio stream index + 1 because the video stream always has index = 1
                 mappings = String.Format("-map 0:0 -map 0:{0}", context.MediaInfo.AudioStreams.First(x => x.ID == context.AudioTrackId).Index + 1);

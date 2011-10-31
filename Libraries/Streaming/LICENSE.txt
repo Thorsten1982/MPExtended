@@ -3,7 +3,7 @@ ffmpeg.exe:
 - Licensed under General Public License, version 3, available from http://www.gnu.org/licenses/gpl-3.0.html
 - Source code available from http://ffmpeg.org/, http://git.videolan.org/ffmpeg.git and http://ffmpeg.zeranoe.com/builds/source/ffmpeg/
 - Compiled for Windows by Kyle Schwarz, http://ffmpeg.zeranoe.com/
-- Revision 6e19cfb083eda83aaf4b49ae765ab2b3e578d32d, static 32-bit build
+- Revision e403a97aac0cf73c011d578bb83d81e7f266d839, static 32-bit build
 
 MediaInfo.dll:
 - Copyright (C) 2002-2010 MediaArea.net SARL, Info@MediaArea.net
